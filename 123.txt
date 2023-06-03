@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="weh.css" />
+  </head>
+  <body>
+    <audio
+      id="background-audio"
+      src="Selamat Ulang Tahun.mp3"
+      autoplay
+      loop
+    ></audio>
+
+    <div class="scroll-container">
+      <div class="scroll-section">
+        <img src="https://i.postimg.cc/XvmV310b/indri1.jpg" />
+        <div class="section-overlay"></div>
+        <p>gimana kabar kamu baik kan</p>
+        <p>gimana kabar kamu baik kan</p>
+      </div>
+      <div class="scroll-section">
+        <img src="https://i.postimg.cc/XvmV310b/indri1.jpg" alt="Image 2" />
+        Section 2 halo halo
+      </div>
+      <div class="scroll-section">
+        <img src="https://i.postimg.cc/XvmV310b/indri1.jpg" alt="Image 3" />
+        <p>gimana kabar nya hari ini</p>
+      </div>
+      <div class="scroll-section">
+        <img src="https://i.postimg.cc/XvmV310b/indri1.jpg" alt="Image 4" />
+        Section 4
+      </div>
+      <div class="scroll-section">
+        <img src="https://i.postimg.cc/XvmV310b/indri1.jpg" alt="Image 5" />
+        halo indrii gimana kabar nya
+        <p>j</p>
+      </div>
+      <div class="end-section">
+        <img
+          class="end-image"
+          src="https://i.postimg.cc/XvmV310b/indri1.jpg"
+          alt="End Image"
+        />
+      </div>
+    </div>
+
+    <div class="scroll-controls">
+      <button onclick="scrollToNextSection()" class="neon-text">
+        Klik ini Yaa
+      </button>
+    </div>
+
+    <script>
+      function scrollToNextSection() {
+        var scrollContainer = document.querySelector(".scroll-container");
+        var scrollSections = document.querySelectorAll(".scroll-section");
+        var currentIndex = Math.floor(
+          scrollContainer.scrollLeft / scrollContainer.offsetWidth
+        );
+        var nextIndex = currentIndex + 1;
+        if (nextIndex < scrollSections.length) {
+          scrollContainer.scrollTo({
+            left: scrollSections[nextIndex].offsetLeft,
+            behavior: "smooth",
+          });
+        } else {
+          // Pindah ke halaman lain
+          window.location.href = "haloo.html";
+        }
+      }
+    </script>
+  </body>
+</html>
+.neon-text { font-size: 24px; color: #fff; text-shadow: 0 0 10px #fff, 0 0 20px
+#fff, 0 0 30px #fff, 0 0 40px #ff00de, 0 0 70px #ff00de, 0 0 80px #ff00de, 0 0
+100px #ff00de, 0 0 150px #ff00de; animation: neon-effect 1s infinite; }
+@keyframes neon-effect { 0% { opacity: 0.6; } 50% { opacity: 1; } 100% {
+opacity: 0.6; } } .scroll-container { overflow-x: scroll; scroll-snap-type: x
+mandatory; white-space: nowrap; height: auto; } .scroll-section { white-space:
+nowrap; scroll-snap-align: start; position: relative; display: inline-flex;
+flex-direction: column; align-items: center; justify-content: center; width:
+100%; height: 100%; text-align: center; font-size: 24px; overflow: hidden; }
+.scroll-section img { position: relative; justify-content: top; margin-top: 0px;
+top: 0; left: 0; right: 0; margin: auto; max-width: 50%; max-height: 35%; }
+.scroll-section .btn { margin-top: 10px; } .scroll-controls { display: flex;
+justify-content: center; margin-top: 10px; right: 50px; left: 50px; bottom: 0px;
+} .scroll-controls button { margin: 10px; right: 200px; left: 200px; bottom:
+0px; } .external-button { display: none; justify-content: center; margin-top:
+20px; } .end-section { top: auto; right: 100; position: relative;
+background-color: white; width: 100%; height: 100%; } .end-section .end-image {
+margin-top: 0px; position: absolute; right: 100%; top: 100%; left: 450%;
+transform: translate(-50%, -50%); max-width: 50%; max-height: 50%; }
+.end-section .end-button { border: none; background: blue; padding: 10px 10px;
+color: blue; border-radius: 0px; transition: 0.2s; position: absolute; bottom:
+150px; left: 450%; transform: translateX(-50%, -50%); } .end-button:hover {
+box-shadow: 0 0 0 4px #1548c9, 0 0 0 10px #4070f4; } body { background-image:
+url("https://i.pinimg.com/564x/be/f4/a3/bef4a3bed70666a87c3656d2f8424333.jpg");
+background-repeat: no-repeat; background-size: cover; backdrop-filter: blur(px);
+} p { color: #fff; }
